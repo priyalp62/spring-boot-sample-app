@@ -214,10 +214,7 @@ pipeline {
     }
     post {
         // Always runs. And it runs before any of the other post conditions.
-        always {
-            // Let's wipe out the workspace before we finish!
-            deleteDir()
-        }
+        agent none
         success {
             sendEmail("Successful");
         }
