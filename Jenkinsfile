@@ -214,7 +214,9 @@ pipeline {
     }
     post {
         // Always runs. And it runs before any of the other post conditions.
-        agent none
+        agent {
+        label 'apache'
+      }
         success {
             sendEmail("Successful");
         }
